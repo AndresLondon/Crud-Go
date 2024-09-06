@@ -1,0 +1,31 @@
+{{ define "index_user" }}
+  {{ template "cabecera" }}
+    <a class="btn btn-success" href="/crear" role="button">Agregar Usuarios</a>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range. }}
+            <tr>
+              <th scope="row">{{ .Id }}</th>
+              <td>{{ .Nombre }}</td>
+              <td>{{ .Correo }}</td>
+              <td>
+                <a name="" id="" class="btn btn-primary" href="/edit?id={{.Id}}" role="button">Editar</a>
+                |
+                <a name="" id="" class="btn btn-danger" href="/delete?id={{.Id}}" role="button">Eliminar</a>
+              </td>
+            </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+  {{ template "pie" }}
+{{ end }}

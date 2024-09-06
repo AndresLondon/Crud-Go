@@ -1,0 +1,26 @@
+{{ define "new_user" }}
+    {{ template "cabecera" }}
+        <div class="card">
+            <div class="card-header">
+                Usuarios
+            </div>
+            <div class="card-body">
+                <form action="/insertar" method="post">
+                    <div class="form-group">
+                      <label for="name_user">Nombre</label>
+                      <input type="text"
+                        class="form-control" name="name_user" id="name_user" aria-describedby="name_user" placeholder="Jhon">
+                      <small id="name_user" class="form-text text-muted">Help text</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="email_user">Correo</label>
+                      <input type="email"
+                        class="form-control" name="email_user" id="email_user" aria-describedby="email_user" placeholder="example@gmail.com.com">
+                      <small id="email_user" class="form-text text-muted">Help text</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </form>
+            </div>
+        </div>
+    {{ template "pie" }}
+{{ end }}

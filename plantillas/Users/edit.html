@@ -1,0 +1,27 @@
+{{ define "edit_user" }}
+    {{ template "cabecera" }}
+        <div class="card">
+            <div class="card-header">
+                Editar Usuario: {{ .Nombre }}
+            </div>
+            <div class="card-body">
+                <form action="/actualizar" method="post">
+                    <input type="hidden" name="id_user" value="{{ .Id }}">
+                    <div class="form-group">
+                      <label for="name_user">Nombre</label>
+                      <input type="text"
+                        class="form-control" name="name_user" id="name_user" aria-describedby="name_user" value="{{ .Nombre }}">
+                      <small id="name_user" class="form-text text-muted">Help text</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="email_user">Correo</label>
+                      <input type="email"
+                        class="form-control" name="email_user" id="email_user" aria-describedby="email_user" value="{{ .Correo }}">
+                      <small id="email_user" class="form-text text-muted">Help text</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </form>
+            </div>
+        </div>
+    {{ template "pie" }}
+{{ end }}
