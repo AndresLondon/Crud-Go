@@ -1,0 +1,2 @@
+# Excluir el archivo .env para no subir credenciales sensibles
+.env
